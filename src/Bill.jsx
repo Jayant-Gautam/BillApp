@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 
-let accountNo = 1234567890;
+let accountNo = 41687809184;
 let selfAdd = {
     name: "M/s  A.D. TRADERS",
     address: "B 124, APEX GREEN APARTMENT SEC - 8, GT ROAD, SONEPAT - 131001 (HR)",
