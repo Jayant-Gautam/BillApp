@@ -1,0 +1,47 @@
+.ProductForm {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.inputComponent {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.inputComponent label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    font-size: large;
+}
+
+.inputComponent input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+    /* width: 300px; */
+}
+
+.inputComponent input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.inputComponent select{
+    width: 100%;
+    height: 40px;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+.inputComponent select:focus {
+    border-color: #007bff;
+    outline: none;
+}
