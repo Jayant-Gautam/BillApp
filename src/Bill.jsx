@@ -14,17 +14,18 @@ export default function Bill({ Products, add }) {
 
     function handlePrint() {
         const input = billRef.current;
-        html2canvas(input)
+        html2canvas(input, { scale: 3 }) // Increase scale for better quality
             .then((canvas) => {
-                const imgData = canvas.toDataURL('image/png');
+                const imgData = canvas.toDataURL('image/png', 1.0); // Highest quality PNG
                 const pdf = new jsPDF('p', 'mm', 'a4');
                 const imgProps = pdf.getImageProperties(imgData);
                 const pdfWidth = pdf.internal.pageSize.getWidth();
                 const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
-                pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+                pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight, '', 'FAST'); // 'FAST' improves rendering
                 pdf.save('invoice.pdf');
             });
     }
+    
 
     return (
         <>
