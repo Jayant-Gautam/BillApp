@@ -29,20 +29,20 @@ export default function Bill({ Products, add }) {
     return (
         <>
         <div ref={billRef} style={{ width: '210mm', height: '297mm', padding: '20mm', border: '1px solid black', boxSizing: 'border-box' }}>
-            <div style={{ textAlign: 'center', marginBottom: '20mm' }}>
+            <div style={{ textAlign: 'center', marginBottom: '15mm' }}>
                 <h1>Invoice</h1>
                 <h2>{selfAdd.name}</h2>
                 <p>{selfAdd.address}</p>
                 <p>Phone: {selfAdd.ph}</p>
                 <p>Account No: {accountNo}</p>
             </div>
-            <div style={{ marginBottom: '20mm' }}>
+            <div style={{ marginBottom: '15mm' }}>
                 <h3>Billing To:</h3>
                 <p>Name: {add.name}</p>
                 <p>Address: {add.address}</p>
                 <p>Phone: {add.ph}</p>
             </div>
-            <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: '20mm' }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: '15mm' }}>
                 <thead>
                     <tr>
                         <th style={{ border: '1px solid black', padding: '8px' }}>Product Name</th>
@@ -65,7 +65,7 @@ export default function Bill({ Products, add }) {
                 </tbody>
             </table>
             <div style={{ textAlign: 'right' }}>
-                <h3>Total Amount: {Products.reduce((total, product) => total + (product.price * product.quantity * (1 + product.GST / 100)), 0).toFixed(2)}</h3>
+                <h3>Total Amount: {Products.reduce((total, product) => total + (product.price * product.quantity), 0).toFixed(2)}</h3>
             </div>
         </div>
         <button onClick={handlePrint}>Download</button>
