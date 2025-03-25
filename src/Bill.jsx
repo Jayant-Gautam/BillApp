@@ -67,7 +67,7 @@ export default function Bill({ Products, add }) {
                     paddingRight: '80px',
                 }} className='billingTo'>   
                     <div><b>Address: </b>{add.address}</div>
-                    <div><b>Box No. : </b>{add.billNo}</div>
+                    <div><b>Box No. : </b>{add.boxNo}</div>
                 </div>
                 <p><b>Phone: </b>{add.ph}</p>
 
@@ -75,21 +75,21 @@ export default function Bill({ Products, add }) {
             <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: '15mm' }}>
                 <thead>
                     <tr>
-                        <th style={{ border: '1px solid black', padding: '8px' }}>Product Name</th>
-                        <th style={{ border: '1px solid black', padding: '8px' }}>Price</th>
-                        <th style={{ border: '1px solid black', padding: '8px' }}>Quantity</th>
-                        <th style={{ border: '1px solid black', padding: '8px' }}>GST</th>
-                        <th style={{ border: '1px solid black', padding: '8px' }}>Total</th>
+                        <th style={{ textAlign: 'left', border: '1px solid black', padding: '8px' }}>Product Name</th>
+                        <th style={{ textAlign: 'center', border: '1px solid black', padding: '8px' }}>Price</th>
+                        <th style={{ textAlign: 'center', border: '1px solid black', padding: '0px' }}>Qty.</th>
+                        {/* <th style={{ textAlign: 'center', border: '1px solid black', padding: '8px' }}>GST</th> */}
+                        <th style={{ textAlign: 'center', border: '1px solid black', padding: '8px' }}>Total</th>
                     </tr>
                 </thead>
                 <tbody>
                     {Products.map((product, index) => (
                         <tr key={index}>
-                            <td style={{ border: '1px solid black', padding: '8px' }}>{product.pName}</td>
-                            <td style={{ border: '1px solid black', padding: '8px' }}>{(product.price / (1 + (product.GST / 100))).toFixed(2)}</td>
-                            <td style={{ border: '1px solid black', padding: '8px' }}>{product.quantity}</td>
-                            <td style={{ border: '1px solid black', padding: '8px' }}>{product.GST}%</td>
-                            <td style={{ border: '1px solid black', padding: '8px' }}>{product.price * product.quantity}</td>
+                            <td style={{ textAlign: 'left', border: '1px solid black', padding: '8px' }}>{product.pName}</td>
+                            <td style={{ textAlign: 'center', border: '1px solid black', padding: '8px' }}>{(product.price)}/-</td>
+                            <td style={{ textAlign: 'center', border: '1px solid black', padding: '8px' }}>{product.quantity}</td>
+                            {/* <td style={{ textAlign: 'center', border: '1px solid black', padding: '8px' }}>{product.GST}%</td> */}
+                            <td style={{ textAlign: 'center', border: '1px solid black', padding: '8px' }}>{product.price * product.quantity}/-</td>
                         </tr>
                     ))}
                 </tbody>

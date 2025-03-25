@@ -7,7 +7,7 @@ import Bill from './Bill';
 function App() {
   let [Products,setProducts] = useState([]);
   let [product, set_product] = useState({pName : "", price : 0, quantity : 0, GST : 0})
-  let [add, setAdd] = useState({name : "", ph : 0, address : "", billNo : null})
+  let [add, setAdd] = useState({name : "", ph : null, address : "", billNo : null, boxNo: null})
   let [generateBill,setGenerateBill] = useState("False")
 
   function handleClick(){

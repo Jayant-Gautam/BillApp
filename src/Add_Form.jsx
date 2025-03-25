@@ -30,6 +30,11 @@ export default function Add_Form ({add, setAdd}){
             <label htmlFor="billNo">Bill No.</label>
                 <input onChange={handleChange} id="billNo" name="billNo" type="number" />
             </div>
+            <div className="inputComponent">
+
+            <label htmlFor="boxNo">Number of Boxes</label>
+                <input onChange={handleChange} id="boxNo" name="boxNo" type="number" />
+            </div>
         </div>
     )
 }
