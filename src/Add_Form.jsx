@@ -25,6 +25,11 @@ export default function Add_Form ({add, setAdd}){
             <label htmlFor="ph">Phone No.</label>
                 <input onChange={handleChange} id="ph" name="ph" type="number" />
             </div>
+            <div className="inputComponent">
+
+            <label htmlFor="billNo">Bill No.</label>
+                <input onChange={handleChange} id="billNo" name="billNo" type="number" />
+            </div>
         </div>
     )
 }

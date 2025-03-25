@@ -23,6 +23,13 @@
     padding: 8px;
 }
 
+.billingTo{
+    display: flex;
+    gap: 100px;
+    /* flex-direction: column; */
+    /* justify-content: space-between; */
+}
+
 @media (max-width: 600px) {
     .bill-container {
         padding: 10px;
