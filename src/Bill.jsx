@@ -3,7 +3,6 @@ import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 import image from '../public/Logo.png'
 
-let accountNo = 41687809184;
 let selfAdd = {
     name: "M/s  A.D. TRADERS",
     address: "B 124, APEX GREEN APARTMENT SEC - 8, GT ROAD, SONEPAT - 131001 (HR)",
@@ -37,17 +36,13 @@ export default function Bill({ Products, add }) {
 
     return (
         <>
-        <div ref={billRef} style={{ width: '210mm', height: '297mm', padding: '20mm', border: '1px solid black', boxSizing: 'border-box' }}>
-            <div>
-                <img src={image} alt="Company Logo" style={{ width: '100px', height: '100px', filter: 'brightness(1.2)' }} />
-                {/* <img src={'./public/Logo.png'} alt="" /> */}
-            </div>
-            <div style={{ textAlign: 'center', marginBottom: '15mm' }}>
+        <div ref={billRef} style={{ width: '210mm', height: '297mm', padding: '10mm', border: '1px solid black', boxSizing: 'border-box', position: 'relative' }}>
+        <img className='logo' src={image} alt="Company Logo" style={{ width: '100px', height: '100px', filter: 'brightness(1.2)' }} />
+            <div style={{ textAlign: 'center', marginBottom: '15mm', marginTop: '-25mm' }}>
                 <h1>Invoice</h1>
                 <h2>{selfAdd.name}</h2>
                 <p>{selfAdd.address}</p>
                 <p>Phone: {selfAdd.ph}</p>
-                <p>Account No: {accountNo}</p>
             </div>
             <div>
                 Date : {formatDate(new Date())}
@@ -58,14 +53,23 @@ export default function Bill({ Products, add }) {
                     display: 'flex',
                     justifyContent: 'space-between',
                     marginBottom: '10px',
-                    paddingLeft: '5px',
-                    paddingRight: '40px',
+                    paddingLeft: '0px',
+                    paddingRight: '80px',
                 }} className='billingTo'>   
-                    <div>Name: {add.name}</div>
-                    <div>Bill No. : {add.billNo}</div>
+                    <div><b>Name: </b>{add.name}</div>
+                    <div><b>Invoice No. : </b>{add.billNo}</div>
                 </div>
-                <p>Address: {add.address}</p>
-                <p>Phone: {add.ph}</p>
+                <div style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    marginBottom: '10px',
+                    paddingLeft: '0px',
+                    paddingRight: '80px',
+                }} className='billingTo'>   
+                    <div><b>Address: </b>{add.address}</div>
+                    <div><b>Box No. : </b>{add.billNo}</div>
+                </div>
+                <p><b>Phone: </b>{add.ph}</p>
 
             </div>
             <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: '15mm' }}>
