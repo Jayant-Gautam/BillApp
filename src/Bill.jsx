@@ -4,12 +4,12 @@ import jsPDF from 'jspdf';
 import image from '../public/Logo.png'
 
 let selfAdd = {
-    name: "M/s  A.D. TRADERS",
     address: "B 124, APEX GREEN APARTMENT SEC - 8, GT ROAD, SONEPAT - 131001 (HR)",
     ph: 8708698580
 };
 
-export default function Bill({ Products, add }) {
+export default function Bill({ Products, add, name }) {
+    selfAdd.name = name;
     const billRef = useRef();
 
     const formatDate = (date) => {
@@ -36,18 +36,18 @@ export default function Bill({ Products, add }) {
 
     return (
         <>
-        <div ref={billRef} style={{ width: '210mm', height: '297mm', padding: '10mm', border: '1px solid black', boxSizing: 'border-box', position: 'relative' }}>
+        <div ref={billRef} style={{ width: '210mm', height: '297mm', padding: '10mm', paddingTop: '0mm', border: '1px solid black', boxSizing: 'border-box', position: 'relative' }}>
         <img className='logo' src={image} alt="Company Logo" style={{ width: '100px', height: '100px', filter: 'brightness(1.2)' }} />
-            <div style={{ textAlign: 'center', marginBottom: '15mm', marginTop: '-25mm' }}>
+            <div style={{ textAlign: 'center', marginBottom: '5mm', marginTop: '-25mm' }}>
                 <h1>Invoice</h1>
                 <h2>{selfAdd.name}</h2>
-                <p>{selfAdd.address}</p>
-                <p>Phone: {selfAdd.ph}</p>
+                <p style={{ margin: '0mm', padding: '0mm' }}>{selfAdd.address}</p>
+                <p style={{ margin: '0mm', padding: '0mm' }}>Phone: {selfAdd.ph}</p>
             </div>
             <div>
                 Date : {formatDate(new Date())}
             </div>
-            <div style={{ marginBottom: '15mm' }}>
+            <div style={{ marginBottom: '5mm' }}>
                 <h3>Billing To:</h3>
                 <div style={{
                     display: 'flex',
@@ -65,37 +65,38 @@ export default function Bill({ Products, add }) {
                     marginBottom: '10px',
                     paddingLeft: '0px',
                     paddingRight: '80px',
+                    // width: '160mm',
                 }} className='billingTo'>   
-                    <div><b>Address: </b>{add.address}</div>
-                    <div><b>Box No. : </b>{add.boxNo}</div>
+                    <div style={{wordWrap : 'break-word', width : '100mm'}}><b>Address: </b>{add.address}</div>
+                    <div><b>No. of Boxes : </b>{add.boxNo}</div>
                 </div>
                 <p><b>Phone: </b>{add.ph}</p>
 
             </div>
-            <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: '15mm' }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: '5mm' }}>
                 <thead>
                     <tr>
-                        <th style={{ textAlign: 'left', border: '1px solid black', padding: '8px' }}>Product Name</th>
-                        <th style={{ textAlign: 'center', border: '1px solid black', padding: '8px' }}>Price</th>
+                        <th style={{ textAlign: 'left', border: '1px solid black', padding: '6px' }}>Product Name</th>
+                        <th style={{ textAlign: 'center', border: '1px solid black', padding: '6px' }}>Unit Price</th>
                         <th style={{ textAlign: 'center', border: '1px solid black', padding: '0px' }}>Qty.</th>
-                        {/* <th style={{ textAlign: 'center', border: '1px solid black', padding: '8px' }}>GST</th> */}
-                        <th style={{ textAlign: 'center', border: '1px solid black', padding: '8px' }}>Total</th>
+                        {/* <th style={{ textAlign: 'center', border: '1px solid black', padding: '6px' }}>GST</th> */}
+                        <th style={{ textAlign: 'center', border: '1px solid black', padding: '6px' }}>Total</th>
                     </tr>
                 </thead>
                 <tbody>
                     {Products.map((product, index) => (
                         <tr key={index}>
-                            <td style={{ textAlign: 'left', border: '1px solid black', padding: '8px' }}>{product.pName}</td>
-                            <td style={{ textAlign: 'center', border: '1px solid black', padding: '8px' }}>{(product.price)}/-</td>
-                            <td style={{ textAlign: 'center', border: '1px solid black', padding: '8px' }}>{product.quantity}</td>
-                            {/* <td style={{ textAlign: 'center', border: '1px solid black', padding: '8px' }}>{product.GST}%</td> */}
-                            <td style={{ textAlign: 'center', border: '1px solid black', padding: '8px' }}>{product.price * product.quantity}/-</td>
+                            <td style={{ textAlign: 'left', border: '1px solid black', padding: '6px' }}>{product.pName}</td>
+                            <td style={{ textAlign: 'center', border: '1px solid black', padding: '6px' }}>{(product.price)}.00</td>
+                            <td style={{ textAlign: 'center', border: '1px solid black', padding: '6px' }}>{product.quantity}</td>
+                            {/* <td style={{ textAlign: 'center', border: '1px solid black', padding: '6px' }}>{product.GST}%</td> */}
+                            <td style={{ textAlign: 'center', border: '1px solid black', padding: '6px' }}>{product.price * product.quantity}.00</td>
                         </tr>
                     ))}
                 </tbody>
             </table>
-            <div style={{ textAlign: 'right' }}>
-                <h3>Total Amount: {Products.reduce((total, product) => total + (product.price * product.quantity), 0).toFixed(2)}</h3>
+            <div style={{ textAlign: 'right', margin: '0mm', padding: '0mm' }}>
+                <h3 style={{margin: '0mm', padding: '0mm' }}>Total Amount: {Products.reduce((total, product) => total + (product.price * product.quantity), 0).toFixed(2)}</h3>
             </div>
         </div>
         <button onClick={handlePrint}>Download</button>

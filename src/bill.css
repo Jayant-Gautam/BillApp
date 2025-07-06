@@ -1,7 +1,7 @@
 .bill-container {
     border: 1px solid black;
     box-sizing: border-box;
-    padding: 20px;
+    padding: 0px;
     margin: 0 auto;
     max-width: 800px;
     width: 100%;
@@ -37,4 +37,9 @@
     .bill-table th, .bill-table td {
         padding: 4px;
     }
+}
+h3{
+    margin: 0;
+    padding: 0;
+    /* font-size: 1.2em; */
 }

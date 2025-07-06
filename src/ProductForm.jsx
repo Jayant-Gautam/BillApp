@@ -25,7 +25,11 @@ function ProductForm({ Products, setProducts, product, set_product }) {
     "VATA CARE STRIP": 12,
     "WOMEN CARE CAPSULE": 12,
     "RED ALOEVERA JUICE - 1Ltr": 12,
-    "PLETLET-PLUS": 12
+    "PLETLET-PLUS": 12,
+    "CORDYCEPS CAPSULE": 12,
+    "FANTAZYME LIVER CARE CAPSULE": 12,
+    "JOINT CARE ADVANCE SOFTGEL": 18,
+    "CURCUMIN PANCH TULSI": 12,
   }
 
   function handleChange(e) {
@@ -77,6 +81,10 @@ function ProductForm({ Products, setProducts, product, set_product }) {
             <option value="WOMEN CARE CAPSULE">WOMEN CARE CAPSULE</option>
             <option value="RED ALOEVERA JUICE - 1Ltr">RED ALOEVERA JUICE - 1Ltr</option>
             <option value="PLETLET-PLUS">PLETLET-PLUS</option>
+            <option value="CORDYCEPS CAPSULE">CORDYCEPS CAPSULE</option>
+            <option value="FANTAZYME LIVER CARE CAPSULE">FANTAZYME LIVER CARE CAPSULE</option>
+            <option value="JOINT CARE ADVANCE SOFTGEL">JOINT CARE ADVANCE SOFTGEL</option>
+            <option value="CURCUMIN PANCH TULSI">CURCUMIN PANCH TULSI</option>
 
           </select>
         </div>
