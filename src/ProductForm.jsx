@@ -30,6 +30,7 @@ function ProductForm({ Products, setProducts, product, set_product }) {
     "FANTAZYME LIVER CARE CAPSULE": 12,
     "JOINT CARE ADVANCE SOFTGEL": 18,
     "CURCUMIN PANCH TULSI": 12,
+    "AMRUTAM SOFTGEL": 12,
   }
 
   function handleChange(e) {
@@ -85,6 +86,7 @@ function ProductForm({ Products, setProducts, product, set_product }) {
             <option value="FANTAZYME LIVER CARE CAPSULE">FANTAZYME LIVER CARE CAPSULE</option>
             <option value="JOINT CARE ADVANCE SOFTGEL">JOINT CARE ADVANCE SOFTGEL</option>
             <option value="CURCUMIN PANCH TULSI">CURCUMIN PANCH TULSI</option>
+            <option value="AMRUTAM SOFTGEL">AMRUTAM SOFTGEL</option>
 
           </select>
         </div>
