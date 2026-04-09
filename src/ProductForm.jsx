@@ -31,6 +31,7 @@ function ProductForm({ Products, setProducts, product, set_product }) {
     "JOINT CARE ADVANCE SOFTGEL": 18,
     "CURCUMIN PANCH TULSI": 12,
     "AMRUTAM SOFTGEL": 12,
+    "MULTI BERRY JUICE 500 ML": 12,
   }
 
   function handleChange(e) {
@@ -87,6 +88,7 @@ function ProductForm({ Products, setProducts, product, set_product }) {
             <option value="JOINT CARE ADVANCE SOFTGEL">JOINT CARE ADVANCE SOFTGEL</option>
             <option value="CURCUMIN PANCH TULSI">CURCUMIN PANCH TULSI</option>
             <option value="AMRUTAM SOFTGEL">AMRUTAM SOFTGEL</option>
+            <option value="MULTI BERRY JUICE 500 ML">MULTI BERRY JUICE 500 ML</option>
 
           </select>
         </div>
