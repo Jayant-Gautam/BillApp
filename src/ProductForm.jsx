@@ -89,6 +89,9 @@ function ProductForm({ Products, setProducts, product, set_product }) {
             <option value="CURCUMIN PANCH TULSI">CURCUMIN PANCH TULSI</option>
             <option value="AMRUTAM SOFTGEL">AMRUTAM SOFTGEL</option>
             <option value="MULTI BERRY JUICE 500 ML">MULTI BERRY JUICE 500 ML</option>
+            <option value="ASHWAGANDHA CAPSULE">ASHWAGANDHA CAPSULE</option>
+            <option value="TRIPHALA CAPSULE">TRIPHALA CAPSULE</option>
+            <option value="TURMERIC CURCUMIN CAPSULE">TURMERIC CAPSULE</option>
 
           </select>
         </div>
