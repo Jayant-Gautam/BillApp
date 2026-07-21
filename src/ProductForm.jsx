@@ -75,7 +75,7 @@ function ProductForm({ Products, setProducts, product, set_product }) {
             <option value="PAIN OIL (ROLL ON)">PAIN OIL (ROLL ON)</option>
             <option value="VATA CARE CAPSULE">VATA CARE CAPSULE</option>
             <option value="LIVER HEALTH DS SYRUP">LIVER HEALTH DS SYRUP</option>
-            <option value="KAYA SODHAN CAPSULE">KAYA SODHAN CAPSULE</option>
+            <option value="KAYA SODHAN 60 TABLETS">KAYA SODHAN 60 TABLETS</option>
             <option value="REAL MUSTANG CAPSULE">REAL MUSTANG CAPSULE</option>
             <option value="ANTI SUGAR TABLET">ANTI SUGAR TABLET</option>
             <option value="JOINT CARE STRIP">JOINT CARE STRIP</option>
